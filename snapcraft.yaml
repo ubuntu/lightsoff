@@ -1,5 +1,5 @@
 name: lightsoff
-version: git
+adopt-info: lightsoff
 summary: Turn off all the lights
 description: |
   Lights Off is a collection of light switch puzzles. Clicking on a light
@@ -48,6 +48,9 @@ parts:
   lightsoff:
     source: https://gitlab.gnome.org/GNOME/lightsoff.git
     source-type: git
+    override-pull: |
+      snapcraftctl pull
+      snapcraftctl set-version $(git describe --tags --abbrev=10)
     override-build: |
       sed -i.bak -e 's|Icon=org.gnome.LightsOff.svg$|Icon=${SNAP}/meta/gui/org.gnome.LightsOff.svg|g' data/org.gnome.LightsOff.desktop.in
       snapcraftctl build
