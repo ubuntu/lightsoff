@@ -64,3 +64,4 @@ parts:
       snap/lightsoff/current/usr: usr
     build-packages:
       - libclutter-gtk-1.0-dev
+      - g++-multilib
