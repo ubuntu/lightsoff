@@ -29,9 +29,6 @@ apps:
   lightsoff:
     command: usr/bin/lightsoff
     extensions: [gnome]
-    plugs:
-      - gsettings
-      - opengl
     desktop: usr/share/applications/org.gnome.LightsOff.desktop
     environment:
       GSETTINGS_SCHEMA_DIR: $SNAP/share/glib-2.0/schemas
