@@ -30,8 +30,6 @@ apps:
     command: usr/bin/lightsoff
     extensions: [gnome]
     desktop: usr/share/applications/org.gnome.LightsOff.desktop
-    environment:
-      GSETTINGS_SCHEMA_DIR: $SNAP/share/glib-2.0/schemas
 
 parts:
   lightsoff:
@@ -48,7 +46,3 @@ parts:
     plugin: meson
     meson-parameters:
       - --prefix=/usr
-    build-packages:
-      - on amd64:
-        - gcc-multilib
-        - g++-multilib
